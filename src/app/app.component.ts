@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Satellite } from './satellite';
 
 @Component({
@@ -8,7 +8,6 @@ import { Satellite } from './satellite';
 })
 export class AppComponent {
   title = 'orbit-report';
-
   sourceList: Satellite[];
   displayList: Satellite[];
 
@@ -21,6 +20,8 @@ export class AppComponent {
 			response.json().then(function (data) {
 
 				let fetchedSatellites = data.satellites;
+				
+				
 				// loop over satellites
 				for(let i=0; i < fetchedSatellites.length; i++) {
 					// create a Satellite object 
